@@ -1,0 +1,14 @@
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.buscar {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
