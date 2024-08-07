@@ -10,46 +10,63 @@ fetch('./data/gastronomiamdp.json')
         // const comerciosComidaList = document.getElementById("comercio-comida")
         // const totalRegistros = document.getElementById("total-comercios")
     }).catch(error => console.error('Error cargando el JSON:', error));
-
     //funcion mostrar restaurant
      function mostrarComercios(comercios) {
         const comerciosComidaList = document.getElementById("comercio-comida")
+        comerciosComidaList.style.justifyContent = "flex-start";
         comerciosComidaList.innerHTML = '';
+         
         // recorro el array 
         comercios.forEach(comercio => {
        const container = document.createElement("div");
+       container.classList.add("card")
              const link = `https://www.google.com/maps?q=${comercio.latitud},${comercio.longitud}`;
-             container.innerHTML = 
-            `<div class="card" style="width: 18rem;">
-             <div class="card-body">
-               <h5 class="card-title">#${comercio.id} - ${comercio.Nombre} </h5>
-               <h4 class="card-text">${comercio.Categoria}</h4>
-               <p class="card-text">${comercio.Nombre} Direccion: ${comercio.Calle} ${comercio.Número} </p>
-               <a href="${link}" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>Go somewhere</a>
-             </div>
-           </div>`
+             const categoria = comercio.Categoria.replace(/-/g, ' ');
+         
+             container.innerHTML = `<div>
+            <p class="text-xs"><span>#${comercio.id}</span><span class="capitalize">${categoria}<span></p>
+               <h5 class="card-title">${comercio.Nombre} </h5>
+               <p class="card-text">${comercio.Nombre} Direccion: ${comercio.Calle} ${comercio.Número}</p>
+               <img src='${comercio.imagen}' class="imagen-comercio" />
+               <div class="btn-center">
+                <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver en Google Maps</a>
+               </div>
+             </div>`
             comerciosComidaList.appendChild(container)
         });
      }
 
-    function mostrarRandom() {
-        const categoriasSeleccionadas = getCategoriaSeleccionada();
-        const comerciosFiltrados = filtrarPorCategoria(comerciosComida, categoriasSeleccionadas);
-        if (comerciosFiltrados.length === 0) {
-        alert('No hay comercios disponibles para las categorías seleccionadas');
+     function mostrarRandom() {
+         const categoriasSeleccionadas = getCategoriaSeleccionada();
+         const comerciosFiltrados = filtrarPorCategoria(comerciosComida, categoriasSeleccionadas);
+         if (comerciosFiltrados.length === 0) {
+         alert('No hay comercios disponibles para las categorías seleccionadas');
         return;
     }
+    // document.getElementById("comercio-comida").style.justifyContent = "center";
+     document.getElementById("loader").style.display = "block";
+     document.getElementById("comercio-comida").style.display = "none";
+    
+     setTimeout(()=>{
     const idAleatorio =Math.floor(Math.random() * comerciosFiltrados.length);
-    const comercioAleatorio = comerciosFiltrados[idAleatorio];
-    mostrarComercios([comercioAleatorio])
-    }
+    const comercioAleatorio = comerciosFiltrados[idAleatorio];   
+    document.getElementById("loader").style.display = "none";
+        mostrarComercios([comercioAleatorio])
+        const comerciosComidaList = document.getElementById("comercio-comida")
+        comerciosComidaList.style.cssText = "display: flex; justify-content: center"
+    },"1000")
+}
 
     function filtrarPorCategoria(comercio,categorias) {
         if(categorias.length===0) return comercio;
         return comercio.filter(comercio => categorias.includes(comercio.Categoria))
     }
-    const botonRandom = document.getElementById("button-random")
-    botonRandom.addEventListener("click", mostrarRandom)
+    
+    //botones random
+     const botonRandom = document.getElementById("button-random")
+     botonRandom.addEventListener("click", mostrarRandom)
+  
+
     // button-random
 
     // funcion categoria seleccionada 
@@ -62,6 +79,58 @@ fetch('./data/gastronomiamdp.json')
         console.log(categoriaSeleccionada)
         return categoriaSeleccionada;
     }
+
+
+    const botonBuscar = document.getElementById("button-search");
+    botonBuscar.addEventListener("click", () => {
+    const searchInput = document.getElementById("search-input").value.toLowerCase();
+    if (searchInput.trim() === "") {
+        const comerciosComidaList = document.getElementById("comercio-comida");
+        comerciosComidaList.innerHTML = 'Ingrese por favor datos en el campo';
+        const comercioMostrar = document.getElementById("mostrar-comercio");
+        comercioMostrar.innerHTML = "";
+    } else {
+        const comercioMostrar = document.getElementById("mostrar-comercio");
+        comercioMostrar.innerHTML = "";
+        const categoriasSeleccionadas = getCategoriaSeleccionada();
+        const filtrarComercio = comerciosComida.filter(comercio => 
+            (comercio.Nombre.toLowerCase().includes(searchInput) || 
+            comercio.Categoria.toLowerCase().includes(searchInput)) &&
+            (categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(comercio.Categoria))
+        );
+        console.log('Comercios filtrados:', filtrarComercio);
+        
+       
+        if(filtrarComercio == 0) {
+            const comerciosComidaList = document.getElementById("comercio-comida")
+            comerciosComidaList.innerHTML = 'No existe el comercio en esa categoria';
+        }else {
+            mostrarComercios(filtrarComercio);
+        }
+    }
+});
+
+// funcion cargando 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // const botonBuscar = document.getElementById("button-search");
@@ -158,27 +227,7 @@ fetch('./data/gastronomiamdp.json')
 // botonRandom.addEventListener("click", mostrarRandom);
 
 // Event listener para botón de búsqueda
-// const botonBuscar = document.getElementById("button-search");
-// botonBuscar.addEventListener("click", () => {
-//     const searchInput = document.getElementById("search-input").value.toLowerCase();
-//     if (searchInput.trim() === "") {
-//         const comerciosComidaList = document.getElementById("comercio-comida");
-//         comerciosComidaList.innerHTML = 'Ingrese por favor datos en el campo';
-//         const comercioMostrar = document.getElementById("mostrar-comercio");
-//         comercioMostrar.innerHTML = "";
-//     } else {
-//         const comercioMostrar = document.getElementById("mostrar-comercio");
-//         comercioMostrar.innerHTML = "";
-//         const categoriasSeleccionadas = getCategoriaSeleccionada();
-//         const filtrarComercio = comerciosComida.filter(comercio => 
-//             (comercio.Nombre.toLowerCase().includes(searchInput) || 
-//             comercio.Categoria.toLowerCase().includes(searchInput)) &&
-//             (categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(comercio.Categoria))
-//         );
-//         console.log('Comercios filtrados:', filtrarComercio);
-//         mostrarComercios(filtrarComercio);
-//     }
-// });
+
 
 
 

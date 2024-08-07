@@ -1,14 +1,131 @@
-.center-content {
+
+/* body {
+
+} */
+
+/* ## header ## */
+
+header {
+    width: 100%;
+    height: 80px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    background-color: #3C3658;
 }
+
+.container-xs {
+    width: 700px;
+    margin: 0 auto ;
+    background-color: blue;
+}
+
+.container-smx {
+    width: 940px !important;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+/*header */
+
+
 
 .buscar {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    margin: 0 auto;
 }
 
+.gap-10 {
+    gap:10px;
+}
+
+.gap-20 {
+    gap: 20px;
+} 
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    animation: spin 2s linear infinite;
+    display: none; /* Oculto por defecto */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
+
+/* 
+
+/* Contenedor principal */
+.contenedor-lista {
+    display: flex;
+    gap: 20px; /* Espacio entre las tarjetas */
+    width:100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: red;
+}
+
+/* Tarjetas individuales */
+.card {
+    width: 280px!important;
+    padding: 10px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.card-title {
+    padding-top: 0 !important;
+    margin-top:0 !important;
+}
+
+
+.text-xs {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color:#666;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+    margin-bottom: 4px !important;
+}
+
+
+.imagen-comercio {
+    width:100%;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+}
+
+.cont-center {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.color-secondary {
+    background-color: #6a6099;
+}
+.content-category {
+width: 900px; 
+margin: 0 auto; 
+display: flex; 
+gap:30px;
+}
+
+.content-category input {
+    margin:0px 10px
+}
