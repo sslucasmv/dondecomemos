@@ -146,7 +146,7 @@ header {
             width: 26px;
             height: 31px;
             background-color: #2A8387;
-            background-image: url('arrow.png');
+            background-image: url('../arrow.png');
             display: block;
             position: absolute;
             right: 130px;  
