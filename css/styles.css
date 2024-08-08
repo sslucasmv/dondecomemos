@@ -1,3 +1,5 @@
+
+
 @media only screen and (max-width: 600px) {
     body {
         background-color:#ddd;
@@ -22,7 +24,7 @@
         display: flex; 
         gap:0px !important;
         flex-wrap: wrap;
-        padding: 0px !important;
+        padding:5px 0 !important;
         background-color: #ddd !important;
         }
 
@@ -66,6 +68,9 @@
          text-shadow: 1px 1px 2px #5DB497;
          padding: 12px 8px !important;
          font-size: 28px !important;
+         font-family: "K2D", sans-serif !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
         }
 }
 
@@ -189,7 +194,7 @@ header {
 width: 900px; 
 margin: 0 auto; 
 display: flex; 
-gap:10px;
+gap:20px;
 flex-wrap: wrap;
 padding: 10px;
 }
@@ -239,7 +244,7 @@ padding: 10px;
 
   .checkbox-wrapper-47 label {
     position: relative;
-    padding-left: 25px;
+    padding-left: 30px;
     padding-right: 10px;
     line-height: 2;
     cursor: pointer;
@@ -260,13 +265,16 @@ padding: 10px;
     height: 1.2em;
     border: 2px solid #3498db;
     border-radius: 6px;
+    margin-right: 10px;
     z-index: -1;
    
   }
 
   .checkbox-wrapper-47 input[type=checkbox]:checked + label {
     padding-left: 1em;
+    margin-right: 0.5em;
     color: #fff;
+   
    
   }
   .checkbox-wrapper-47 input[type=checkbox]:checked + label:before {
