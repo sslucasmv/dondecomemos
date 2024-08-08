@@ -18,47 +18,51 @@
     </header>
     
   
-        <div class="container-fluid color-secondary">
+        <div class="container-fluid bg-category">
            
             <div class="content-category">
-                <h3>Puedes utilizar las categorias para filtrar tu resultado</h3>
-                <div>
-                <input type="checkbox" class="categoria-checkbox" value="restaurante"> <label for="categoria1">Restaurante</label>
-                </div>
-                <div>
-                <input type="checkbox" class="categoria-checkbox" value="cafe-bar"> <label for="categoria2">Cafe / Bar</label>
-                </div>
-                <div>
-                <input type="checkbox" class="categoria-checkbox" value="comidas-rapidas"> <label for="categoria3">Comidas Rapidas</label>
-                </div>
-            <!-- -->
-                <div>
-                <input type="checkbox" class="categoria-checkbox" value="restobar"> <label for="categoria1">RestoBar</label>
-                </div>
-                <div>
-                <input type="checkbox" class="categoria-checkbox" value="casa-de-te"> <label for="categoria2">Casa de Té</label>
-                </div>
-                <div>
-                <input type="checkbox" class="categoria-checkbox" value="heladería"> <label for="categoria3">Heladería</label>
-                </div> 
-            </div><!-- flex-->
+
+
+                <div class="checkbox-wrapper-47">
+                    <input type="checkbox" name="cb" id="cb-47" value="restaurante" class="categoria-checkbox" />
+                    <label for="cb-47">Restaurante</label>
+                  </div>
+
+
+
+                  <div class="checkbox-wrapper-47">
+                    <input type="checkbox" name="cb" id="cb-48" value="comidas-rapidas" class="categoria-checkbox" />
+                    <label for="cb-48">Comidas Rápidas</label>
+                  </div>
+
+
+
+            
+            <input type="checkbox" class="categoria-checkbox" value="cafe-bar"> <label for="categoria2">Cafe / Bar</label>
+            </div>
+              
+             
+                      
+                        
+                
+            </div>
         </div>
         <div class="container-smx">
        
 
         <!-- buscar -->
-        <div class="buscar">
+        <div class="buscar bg-search">
             <div class="cont-center">
-                <div style="display: flex;">
-            <input type="text" id="search-input" placeholder="Buscar...">
-               
-                <button id="button-search">Buscar comercio</button>
-            </div>
-                <div style="display: flex; justify-content: center;">
-                <button id="button-random" class="btn btn-success" style="margin-top: 10px; margin-bottom: 10px; padding: 10px; width: 300px;">¿Dónde vamos? &nbsp;<i class="fa-solid fa-dice"></i></button>
+                <div style="display: flex; gap: 10px; padding: 20px;">
+                    <div>
+                        <input type="text" id="search-input" class="buscar-campo" placeholder="Buscar...">
+                    </div>
+                    <button id="button-search" class="buscar-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                
             </div>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <button id="button-random" class="btn btn-success" style="margin-top: 10px; margin-bottom: 10px; padding: 10px; width: 300px;">¿Dónde vamos? &nbsp;<i class="fa-solid fa-dice"></i></button>
         </div>
         <!-- buscar -->
       
