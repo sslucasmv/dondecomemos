@@ -29,7 +29,7 @@ fetch('./data/gastronomiamdp.json')
                <p class="card-text">Direccion: ${comercio.Calle} ${comercio.Número}</p>
                <img src='${comercio.imagen}' class="imagen-comercio" />
                <div class="btn-center">
-                <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver en Google Maps </a>
+                <a href="${link}" target="_blank" rel="noopener noreferrer" class="button-25">Ubicación  <i class="fa fa-map-marker" aria-hidden="true"></i></a>
                </div>
              </div>`
             comerciosComidaList.appendChild(container)
@@ -81,34 +81,34 @@ fetch('./data/gastronomiamdp.json')
     }
 
 
-    const botonBuscar = document.getElementById("button-search");
-    botonBuscar.addEventListener("click", () => {
-    const searchInput = document.getElementById("search-input").value.toLowerCase();
-    if (searchInput.trim() === "") {
-        const comerciosComidaList = document.getElementById("comercio-comida");
-        comerciosComidaList.innerHTML = 'Ingrese por favor datos en el campo';
-        const comercioMostrar = document.getElementById("mostrar-comercio");
-        comercioMostrar.innerHTML = "";
-    } else {
-        const comercioMostrar = document.getElementById("mostrar-comercio");
-        comercioMostrar.innerHTML = "";
-        const categoriasSeleccionadas = getCategoriaSeleccionada();
-        const filtrarComercio = comerciosComida.filter(comercio => 
-            (comercio.Nombre.toLowerCase().includes(searchInput) || 
-            comercio.Categoria.toLowerCase().includes(searchInput)) &&
-            (categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(comercio.Categoria))
-        );
-        console.log('Comercios filtrados:', filtrarComercio);
+//     const botonBuscar = document.getElementById("button-search");
+//     botonBuscar.addEventListener("click", () => {
+//     const searchInput = document.getElementById("search-input").value.toLowerCase();
+//     if (searchInput.trim() === "") {
+//         const comerciosComidaList = document.getElementById("comercio-comida");
+//         comerciosComidaList.innerHTML = 'Ingrese por favor datos en el campo';
+//         const comercioMostrar = document.getElementById("mostrar-comercio");
+//         comercioMostrar.innerHTML = "";
+//     } else {
+//         const comercioMostrar = document.getElementById("mostrar-comercio");
+//         comercioMostrar.innerHTML = "";
+//         const categoriasSeleccionadas = getCategoriaSeleccionada();
+//         const filtrarComercio = comerciosComida.filter(comercio => 
+//             (comercio.Nombre.toLowerCase().includes(searchInput) || 
+//             comercio.Categoria.toLowerCase().includes(searchInput)) &&
+//             (categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(comercio.Categoria))
+//         );
+//         console.log('Comercios filtrados:', filtrarComercio);
         
        
-        if(filtrarComercio == 0) {
-            const comerciosComidaList = document.getElementById("comercio-comida")
-            comerciosComidaList.innerHTML = 'No existe el comercio en esa categoria';
-        }else {
-            mostrarComercios(filtrarComercio);
-        }
-    }
-});
+//         if(filtrarComercio == 0) {
+//             const comerciosComidaList = document.getElementById("comercio-comida")
+//             comerciosComidaList.innerHTML = 'No existe el comercio en esa categoria';
+//         }else {
+//             mostrarComercios(filtrarComercio);
+//         }
+//     }
+// });
 
 // funcion cargando 
 
