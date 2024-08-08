@@ -61,6 +61,7 @@
         }
 
         .btn-success {
+            
         width: 95% !important;
         margin: 0 auto !important;
          color: #264d3c !important;
@@ -71,6 +72,27 @@
             font-family: "K2D", sans-serif !important;
             font-weight: 300 !important;
             font-style: normal !important;
+             box-shadow: 1px 20px 30px 10px rgba(82, 85, 83, 0.2);
+        }
+
+        .btn-success:hover {
+            background-color: #5ba772 !important;
+        }
+
+        h2.main-title-app {
+            margin-top: 20px !important;
+            font-size: 28px !important;
+            font-family: "K2D", sans-serif !important;
+            font-weight: 300 !important;
+            line-height: 50px;
+            font-style: normal !important;
+        }
+        p.info-title {
+        font-size: 20px !important;
+        font-family: "K2D", sans-serif !important;
+        font-weight: 300 !important;
+        font-style: normal !important;
+        color: #888;
         }
      
 }
