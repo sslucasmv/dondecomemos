@@ -68,13 +68,23 @@
          text-shadow: 1px 1px 2px #5DB497;
          padding: 12px 8px !important;
          font-size: 28px !important;
-         font-family: "K2D", sans-serif !important;
-  font-weight: 300 !important;
-  font-style: normal !important;
+            font-family: "K2D", sans-serif !important;
+            font-weight: 300 !important;
+            font-style: normal !important;
         }
+     
 }
 
+.logo {
+    display: flex;
+    justify-content: center !important; 
+    align-items: center !important;
+}
 
+.logo img {
+    width: 60%;
+    margin-top: 5px;
+}
 
 header {
     width: 100%;
