@@ -26,10 +26,10 @@ fetch('./data/gastronomiamdp.json')
              container.innerHTML = `<div>
             <p class="text-xs"><span>#${comercio.id}</span><span class="capitalize">${categoria}<span></p>
                <h5 class="card-title">${comercio.Nombre} </h5>
-               <p class="card-text">${comercio.Nombre} Direccion: ${comercio.Calle} ${comercio.Número}</p>
+               <p class="card-text">Direccion: ${comercio.Calle} ${comercio.Número}</p>
                <img src='${comercio.imagen}' class="imagen-comercio" />
                <div class="btn-center">
-                <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver en Google Maps</a>
+                <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver en Google Maps </a>
                </div>
              </div>`
             comerciosComidaList.appendChild(container)
