@@ -145,7 +145,7 @@ header {
         span.arrow {
             width: 26px;
             height: 31px;
-            background-image: url('/arrow.png');
+            background-image: url('arrow.png');
             display: block;
             position: absolute;
             right: 130px;
