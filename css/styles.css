@@ -12,7 +12,7 @@
 
     .container-smx {
         width: 100% !important;
-        margin: 0 auto;
+        
        
     }
 
@@ -56,6 +56,16 @@
             outline: none;
             border: none;
             color: #666;
+        }
+
+        .btn-success {
+        width: 100% !important;
+        margin: 0 auto !important;
+         color: #264d3c !important;
+         background-color: #76CD90 !important;
+         text-shadow: 1px 1px 2px #5DB497;
+         padding: 12px 8px !important;
+         font-size: 28px !important;
         }
 }
 
@@ -215,14 +225,7 @@ padding: 10px;
     border: 1px solid #6c9ea4;
 }
 
-.btn-success {
-    width: 90% !important;
- color: #264d3c !important;
- background-color: #76CD90 !important;
- text-shadow: 1px 1px 2px #5DB497;
- padding: 12px 8px !important;
- font-size: 28px !important;
-}
+
 
 /* */
 
